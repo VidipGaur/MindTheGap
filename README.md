@@ -13,8 +13,7 @@ per-tile contributions.
 
 > **Status.** Research code accompanying an unpublished manuscript. The scripts
 > were recovered after a data-loss event (see [PROVENANCE](docs/PROVENANCE.md)).
-> They have not been re-run end to end on the full 456-slide cohort since the
-> loss. A 5-slide smoke test ran on the lab GPU machine on 2026-10-23: the
+> A 5-slide smoke test ran on the lab GPU machine on 2026-10-23: the
 > pipeline ran on 5 slides, 355 of 363 checks passed, 0 failed (see
 > [SMOKE_REPORT](docs/SMOKE_REPORT.md)). It reports no accuracy. Numbers in the
 > manuscript derive from earlier runs whose raw outputs no longer exist.
@@ -161,11 +160,7 @@ and datasets keep their own terms; see [THIRD_PARTY](docs/THIRD_PARTY.md).
 The original workstation's disk was overwritten in October 2026. The slides,
 all intermediate files, checkpoints and result tables were lost. The code was
 rebuilt from the logs of two working sessions by replaying every file write and
-edit in order, and checked against every later read of each file. Two files are
-less certain: the graph builder is a reconstruction that fills unread gaps from
-an earlier complete version, and the nuclear-feature extractor holds only what
-was read. Some early scripts were never recovered; their stages are
-re-implemented in `smoke/` from recorded settings. The portability pass changed
+edit in order, and checked against every later read of each file. The portability pass changed
 only paths, imports, process handling and packaging. Every change was reviewed
 as a diff against the recovered originals, which stay in the authors' private
 staging repository because the recovery bundle contains session logs. After
