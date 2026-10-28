@@ -34,6 +34,8 @@ First public release.
 * `CODE_OF_CONDUCT.md` names the reporting contact. Lab-machine identifiers and
   process wording are removed from the docs, and statements that the smoke test
   had not been run are corrected.
+* `tools/scan_secrets.py --strict` allows the two published Code of Conduct contact
+  addresses (`PUBLISHED_CONTACTS`); any other address still fails.
 * Docs refer to code by script and name, not by line number; the cost sources in
   `docs/REPRODUCING.md` no longer cite a file outside the repository.
 

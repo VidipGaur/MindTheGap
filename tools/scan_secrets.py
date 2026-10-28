@@ -7,7 +7,8 @@ Usage:
 Each hit is reported as category, file, line and the first six characters of the
 match. Secret-class hits always make the exit status 1. With --strict, e-mail
 addresses, phone numbers and Windows user paths also fail the scan; that is the
-mode used for anything meant to become public. Mentions of KAGGLE_KEY or
+mode used for anything meant to become public. The only addresses allowed are
+the contacts published on purpose, listed in PUBLISHED_CONTACTS. Mentions of KAGGLE_KEY or
 kaggle.json are listed for information only, since documentation has to name them.
 """
 
@@ -39,6 +40,9 @@ INFO = {
     "mentions_kaggle_key": r"KAGGLE_KEY",
     "mentions_kaggle_json": r"kaggle\.json",
 }
+# Addresses published on purpose (the Code of Conduct reporting contacts). Any other
+# address still fails --strict.
+PUBLISHED_CONTACTS = {"gaur.vidip@gmail.com", "vidugaur07@gmail.com"}
 SKIP_DIRS = {".git", ".venv", "node_modules"}
 
 
@@ -64,6 +68,8 @@ def scan(paths):
         for lineno, line in enumerate(text.split("\n"), 1):
             for cls, name, rx in compiled:
                 for m in rx.finditer(line):
+                    if name == "email" and m.group(0).lower() in PUBLISHED_CONTACTS:
+                        continue
                     hits.append({"class": cls, "category": name, "file": str(f),
                                  "line": lineno, "prefix": m.group(0)[:6]})
     return hits

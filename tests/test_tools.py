@@ -33,6 +33,14 @@ def test_secret_scan_strict_fails_on_windows_user_path(tmp_path):
     assert scan_secrets.main(["--strict", str(tmp_path)]) == 1
 
 
+def test_secret_scan_strict_allows_only_the_published_contacts(tmp_path):
+    (tmp_path / "ok.md").write_text("report to gaur.vidip@gmail.com or vidugaur07@gmail.com\n")
+    assert scan_secrets.main(["--strict", str(tmp_path)]) == 0
+    # assembled at run time so this test file does not itself trip the scan
+    (tmp_path / "other.md").write_text("".join(["write to someone.else@", "example.com\n"]))
+    assert scan_secrets.main(["--strict", str(tmp_path)]) == 1
+
+
 def test_path_audit_separates_code_prose_and_windows_branch(tmp_path):
     src = (
         '"""Run from PowerShell."""\n'
