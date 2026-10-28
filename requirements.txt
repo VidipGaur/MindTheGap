@@ -1,0 +1,36 @@
+# Runtime dependencies of the scripts in scripts/, found by an import scan
+# (2026-10-16). Versions are the ones logged on the original lab machine
+# (Python 3.12.10, Windows) unless a line says otherwise. See docs/PROVENANCE.md.
+#
+# For the CUDA build of torch, install requirements-gpu.txt together with this
+# file. System libraries (libvips, OpenSlide) are not pip-installable; see
+# docs/REPRODUCING.md.
+
+numpy==1.26.4
+scipy==1.17.1
+pandas==3.0.2
+scikit-learn==1.8.0
+scikit-image==0.26.0
+matplotlib==3.10.8
+Pillow==10.4.0
+# cv2 reported 4.7.0. The wheel build number and the headless/GUI variant were
+# not recorded; no script calls a cv2 GUI function, so the headless wheel is used.
+opencv-python-headless==4.7.0.72
+tqdm  # unpinned: no version was recorded
+
+torch==2.5.1
+
+# Whole-slide image readers.
+openslide-python==1.4.3
+tiffslide==2.5.1
+pyvips==3.1.1
+# Not imported directly; tiffslide reads pyramids through them.
+tifffile==2025.5.10
+zarr==2.18.7
+
+# Foundation-model encoders (embed_tiles_fm.py and its checks).
+timm==1.0.29
+transformers==5.16.1
+huggingface_hub  # unpinned: no version was recorded
+safetensors  # unpinned: no version was recorded
+einops==0.8.2  # listed by check_fm_env.py as an encoder requirement

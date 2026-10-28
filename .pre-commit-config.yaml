@@ -1,0 +1,25 @@
+# No formatter runs on scripts/, so that a change to a script stays a small,
+# readable diff.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=1024"]
+      - id: end-of-file-fixer
+        files: ^(docs|tests)/
+  - repo: local
+    hooks:
+      # tools/scan_secrets.py is the project's scanner; in testing, detect-secrets
+      # 1.5.0 missed most of the tokens it was checked against.
+      - id: scan-secrets
+        name: scan for credentials
+        entry: python tools/scan_secrets.py
+        language: python
+      - id: audit-paths
+        name: audit Windows paths in scripts/
+        entry: python tools/audit_paths.py
+        language: python
+        additional_dependencies: []
+        files: ^scripts/.*\.py$
+        pass_filenames: false

@@ -1,0 +1,10 @@
+# Scripts in scripts/ that are session or paper-bundle tooling rather than part of
+# the scientific pipeline. They are kept unchanged from the recovered originals, excluded from
+# the path audit gate, the import tests and the published repository. Reasons are in
+# docs/SCRIPT_INVENTORY.md. Not to be confused with scripts/dev/, which ships.
+check_bundle.py
+fix_bom.py
+grep_transcript.py
+make_zip.py
+probe_bbox.py
+test_chrom_load.py

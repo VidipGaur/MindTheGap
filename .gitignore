@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+# no trailing slash: in staging .venv is a symlink to a larger disk
+.venv
+
+# Credentials
+.env
+kaggle.json
+.kaggle/
+
+# Data and run outputs. Nothing derived from slides is ever committed.
+/data/
+cellvit_run/
+bentaeb_run/
+smoke/work/
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.svs
+*.tif
+*.tiff
+*.log
+
+# Files the orchestrators and scaffold scripts write next to themselves
+scripts/pipeline/bt_junctions.ps1
+scripts/pipeline/bt_symlinks.sh
+scripts/pipeline/bentaeb_slides.csv

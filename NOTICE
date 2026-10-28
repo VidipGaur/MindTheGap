@@ -1,0 +1,9 @@
+Mind the Gap: code for a controlled audit of pathology foundation models on
+ovarian carcinoma subtyping
+Copyright 2026 Vidip Gaur, Vidu Gaur
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Model weights, datasets and third-party packages that the code downloads or
+imports keep their own licences and terms; they are not covered by this licence.
+See docs/THIRD_PARTY.md.

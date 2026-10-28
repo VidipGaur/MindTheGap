@@ -1,0 +1,19 @@
+# CUDA 12.1 build of torch, the build logged on the original machine
+# (torch 2.5.1+cu121, NVIDIA RTX 2000 Ada, 16 GB). Install it together with the
+# runtime requirements:
+#
+#   pip install -r requirements-gpu.txt -r requirements.txt
+#
+# which is equivalent to
+#
+#   pip install torch==2.5.1+cu121 torchvision==0.20.1+cu121 \
+#       --extra-index-url https://download.pytorch.org/whl/cu121
+#
+# A driver that cannot run CUDA 12.1 needs a different build. Change it only
+# after recording the reason in docs/LIMITATIONS.md.
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.5.1+cu121
+# timm imports torchvision. Its version was not recorded; 0.20.1 is the release
+# built against torch 2.5.1, and it has to come from the same CUDA index so its
+# compiled ops match torch.
+torchvision==0.20.1+cu121

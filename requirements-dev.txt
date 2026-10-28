@@ -1,0 +1,5 @@
+# Tools for tests, linting and licence reporting. Not needed to run the pipeline.
+pytest
+ruff
+pre-commit
+pip-licenses

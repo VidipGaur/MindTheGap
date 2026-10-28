@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: >-
+  If you use this code, please cite the paper in preferred-citation once it is
+  published, and this repository.
+title: >-
+  Mind the Gap: code for a controlled audit of pathology foundation models on
+  ovarian carcinoma subtyping
+type: software
+authors:
+  - given-names: Vidip
+    family-names: Gaur
+    affiliation: Manipal Institute of Technology Bengaluru, Manipal Academy of Higher Education, India
+  - given-names: Vidu
+    family-names: Gaur
+    affiliation: Manipal Institute of Technology Bengaluru, Manipal Academy of Higher Education, India
+version: 0.3.0
+license: Apache-2.0
+repository-code: "https://github.com/VidipGaur/MindTheGap"
+url: "https://github.com/VidipGaur/MindTheGap"
+keywords:
+  - computational pathology
+  - foundation models
+  - multiple instance learning
+  - ovarian carcinoma
+  - interpretability
+preferred-citation:
+  type: article
+  title: >-
+    Mind the Gap: A Controlled Audit of Pathology Foundation Models on Ovarian
+    Carcinoma Subtyping
+  authors:
+    - given-names: Vidip
+      family-names: Gaur
+    - given-names: Vidu
+      family-names: Gaur
+  status: in-preparation
+  notes: Unpublished manuscript.

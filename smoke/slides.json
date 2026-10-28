@@ -1,0 +1,81 @@
+{
+  "about": "Five-slide smoke panel, one per subtype, with values logged on the original machine. Tolerances are first guesses, not derived; a miss is reported, never hidden by widening a tolerance.",
+  "slides": [
+    {
+      "image_id": "10548", "label": "CC",
+      "n_cells": 241934, "n_tiles": 600, "coverage": 0.9796,
+      "spearman_count_density": 0.946, "spearman_definition": "npz",
+      "shuffled_control": 0.044,
+      "median_nuc_area_um2": null,
+      "source": "original run log (not shipped): deep check of slide 10548 (nuc_features (600, 39); coverage=0.9796 n_cells=241,934; spearman(nuc_count, dens_all_mean) = +0.946, shuffled control +0.044)"
+    },
+    {
+      "image_id": "10077", "label": "EC",
+      "n_cells": 941496, "n_tiles": 971, "coverage": 0.9532,
+      "spearman_count_density": 0.890, "spearman_definition": "check_csv",
+      "shuffled_control": null,
+      "median_nuc_area_um2": 38.1,
+      "source": "original run log (not shipped): extract_nuclear_features.py --check, 2026-08-31"
+    },
+    {
+      "image_id": "38535", "label": "HGSC",
+      "n_cells": 327555, "n_tiles": 760, "coverage": 0.9854,
+      "spearman_count_density": 0.938, "spearman_definition": "check_csv",
+      "shuffled_control": null,
+      "median_nuc_area_um2": 47.8,
+      "source": "original run log (not shipped): extract_nuclear_features.py --check, 2026-08-31"
+    },
+    {
+      "image_id": "5852", "label": "LGSC",
+      "n_cells": 495915, "n_tiles": 634, "coverage": 0.9771,
+      "spearman_count_density": 0.879, "spearman_definition": "check_csv",
+      "shuffled_control": null,
+      "median_nuc_area_um2": 28.6,
+      "source": "original run log (not shipped): extract_nuclear_features.py --check, 2026-08-31"
+    },
+    {
+      "image_id": "14312", "label": "MC",
+      "n_cells": null, "n_tiles": null, "coverage": null,
+      "spearman_count_density": null, "spearman_definition": null,
+      "shuffled_control": null,
+      "median_nuc_area_um2": null,
+      "source": "label MC appears in the original run log (not shipped); no nuclear oracle was logged"
+    }
+  ],
+  "exact": {
+    "10077": {
+      "node_features": [971, 39],
+      "edge_attr": [6484, 23],
+      "edge_index": [2, 6484],
+      "node_grid_shape": [39, 52],
+      "wsi_shape": [39150, 53143],
+      "tile_size_wsi_px": 1024,
+      "n_channel_names": 5,
+      "nuclear": [971, 39],
+      "source": "original run log (not shipped)"
+    }
+  },
+  "informational": {
+    "eosin_check_tile_clear_frac": {
+      "values": {"10077": 0.1550, "10548": 0.3214, "14312": 0.3429},
+      "note": "Slide-level QC printed by an eosin --check run (original run log, not shipped). Not checked: check mode's sampling is not established, so it may not match a full extraction."
+    }
+  },
+  "widths": {
+    "graph_node": 39, "graph_edge": 23,
+    "nuclear": 39, "chromatin": 39, "eosin": 35,
+    "fm": {"phikonv2": 1024, "uni2h": 1536, "hoptimus0": 1536, "hibouL": 1024, "phikon": 768}
+  },
+  "tile_size_wsi_px": 1024,
+  "tolerances": {
+    "n_cells_rel": 0.05,
+    "n_tiles_rel": 0.03,
+    "coverage_abs": 0.01,
+    "spearman_abs": 0.05,
+    "spearman_min": 0.5,
+    "median_area_rel": 0.10,
+    "shuffled_abs_max": 0.10,
+    "coverage_min": 0.9
+  },
+  "known_constant_columns": ["nuc_have_cv2", "morph_measured"]
+}
