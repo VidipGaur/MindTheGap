@@ -11,13 +11,7 @@ representation substitution, subspace deletion with rank- and variance-matched
 nulls, and a bridge regression from named features to the encoders'
 per-tile contributions.
 
-> **Status.** Research code accompanying an unpublished manuscript. The scripts
-> were recovered after a data-loss event (see [PROVENANCE](docs/PROVENANCE.md)).
-> A 5-slide smoke test ran on the lab GPU machine on 2026-10-23: the
-> pipeline ran on 5 slides, 355 of 363 checks passed, 0 failed (see
-> [SMOKE_REPORT](docs/SMOKE_REPORT.md)). It reports no accuracy. Numbers in the
-> manuscript derive from earlier runs whose raw outputs no longer exist.
-
+> **Status.** Research code accompanying an unpublished manuscript.
 ## Pipeline
 
 ```
